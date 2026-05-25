@@ -11,13 +11,11 @@
 <body>
 
   <h1>Welkom</h1>
-  <p>De button hieronder is alleen voor testdoeleinden bij het opstarten van het project. Deze pagina is bedoeld voor de
-    uitleg van jullie escape room.</p>
+  <p>Welkom. deze escape room gaat over een gestoorde wetenschapper.</p>
   <p>Via deze pagina gaat een team naar de aanmeldpagina</p>
 
 
-  <button><a href="./rooms/room_1.php">Klik hier voor een demonstratie van kamer
-      1</a></button>
+  <button><a href="./rooms/room_1.php">Kamer 1.</a></button>
 
 </body>
 
