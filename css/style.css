@@ -1,10 +1,11 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  color:darkgreen
 }
-
+background-color: rgb(255, 255, 255);
 a {
-  color: black;
+  color: rgb(72, 243, 34);
   text-decoration: none;
 }
 
@@ -18,8 +19,8 @@ a {
 .box {
   width: 100px;
   height: 100px;
-  background-color: #3498db;
-  color: white;
+  background-color: #133c20;
+  color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +48,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: rgb(50, 49, 49);
   padding: 20px;
   border-radius: 10px;
   display: none;
