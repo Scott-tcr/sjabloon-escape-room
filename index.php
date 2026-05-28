@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Escape Room - Dieren, Games & Planeten</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="hero">
