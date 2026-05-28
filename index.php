@@ -10,8 +10,8 @@
 
 <body>
 
-  <h1>Welkom</h1>
-  <p>Welkom. deze escape room gaat over een gestoorde wetenschapper.</p>
+  <h1>Het Lab van Dr. Escape-room</h1>
+  <p>Welkom. deze escape room gaat over een gestoorde wetenschapper. Om te ontsnappen moet je de puzzels oplossen en de wetenschpper verslaan.</p>
   <p>Via deze pagina gaat een team naar de aanmeldpagina</p>
 
 
