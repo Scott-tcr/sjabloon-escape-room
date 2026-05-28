@@ -1,22 +1,59 @@
+<?php
+
+?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <title>Escape Room - Dieren, Games & Planeten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Escape Room Challenge</h1>
+            <p>Kies een thema, los de raadsels op en ontsnap uit alle kamers!</p>
+            <a href="#rooms" class="btn-primary">Start jouw avontuur</a>
+        </div>
+    </header>
 
-  <h1>Het Lab van Dr. Escape-room</h1>
-  <p>Welkom. deze escape room gaat over een gestoorde wetenschapper. Om te ontsnappen moet je de puzzels oplossen en de wetenschpper verslaan.</p>
-  <p>Via deze pagina gaat een team naar de aanmeldpagina</p>
+    <main>
+        <section id="rooms" class="rooms">
+            <h2>Kies je kamer</h2>
+            <p class="subtitle">Drie thema’s, drie uitdagingen. Waar begin jij?</p>
 
+            <div class="room-grid">
 
-  <button><a href="./rooms/room_1.php">Kamer 1.</a></button>
+                <!-- Dieren -->
+                <article class="room-card">
+                    <img src="OIP.webp" alt="Dieren" class="room-img">
+                    <h3>Dierenkamer</h3>
+                    <p>Ontsnap uit de dierentuin door slimme dierenraadsels op te lossen.</p>
+                    <a href="dieren.php" class="btn-secondary">Speel Dieren</a>
+                </article>
 
+                <!-- Games -->
+                <article class="room-card">
+                    <img src="gamen.webp" alt="Games" class="room-img">
+                    <h3>Gamekamer</h3>
+                    <p>Voor echte gamers: power-ups, levels en game-termen als raadsels.</p>
+                    <a href="games.php" class="btn-secondary">Speel Games</a>
+                </article>
+
+                <!-- Planeten -->
+                <article class="room-card">
+                    <img src="planet.jpg" alt="Planeten" class="room-img">
+                    <h3>Planetenkamer</h3>
+                    <p>Reis door de ruimte en kraak de codes van ons zonnestelsel.</p>
+                    <a href="planeten.php" class="btn-secondary">Speel Planeten</a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Escape Room Project – Gemaakt door Rico, Scott en Jimmy</p>
+    </footer>
 </body>
-
 </html>
