@@ -1,6 +1,8 @@
 <?php
 require_once('../dbcon.php');
 
+
+
 try {
   $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomId = 2");
   $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
