@@ -133,4 +133,38 @@ body {
     border-top: 1px solid #111827;
 }
  
- 
+.lose-screen {
+    background: #2b0000;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.lose-screen .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #ff4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+ .win-screen {
+  background: #003300;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.win-screen .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #00cc66;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+}
