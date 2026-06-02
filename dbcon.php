@@ -1,7 +1,7 @@
 <?php
 $server = "localhost"; 
 $username = "root";
-$password = "";  //macbook gebruikers vullen bij wachtwoord "root" in.
+$password = "";  
 $db = "escaperoom"; //pas dit aan indien de naam van jullie database anders is
 
 try {
