@@ -1,0 +1,136 @@
+/* ============================
+   ROOM 2 – THEMA (BLAUW / MYSTERIE)
+   ============================ */
+
+body.room2 {
+    background: linear-gradient(135deg, #001f3f, #003d7a);
+    font-family: Arial, sans-serif;
+    color: #e6f0ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Titel & subtitel */
+.room2 h1 {
+    margin-top: 30px;
+    font-size: 3rem;
+    color: #a8cfff;
+}
+
+.room2-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d4e6ff;
+}
+
+/* Container */
+.room2-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Grid */
+.room2-box-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Boxen */
+.room2-box {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(120, 170, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 50, 120, 0.4);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.room2-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 80, 180, 0.6);
+    border-color: #7ab3ff;
+}
+
+.room2-box h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #bcd9ff;
+}
+
+.room2-box p {
+    margin-top: 8px;
+    color: #dceaff;
+}
+
+/* Overlay */
+.room2-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 20, 50, 0.7);
+    display: none;
+    z-index: 10;
+}
+
+/* Modal */
+.room2-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 35px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 450px;
+    border: 1px solid rgba(120, 170, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 50, 120, 0.6);
+    display: none;
+    z-index: 20;
+    backdrop-filter: blur(6px);
+}
+
+.room2-modal h2 {
+    margin-top: 0;
+    color: #a8cfff;
+}
+
+.room2-modal input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.room2-modal button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4da3ff, #7ac7ff);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #002244;
+    transition: 0.2s ease;
+}
+
+.room2-modal button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(120, 170, 255, 0.5);
+}
+
+/* Feedback */
+.room2-feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}

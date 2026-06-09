@@ -1,55 +1,90 @@
-// Teller voor goede antwoorden
+// =========================
+// TIMER 3:00 → 0:00
+// =========================
+
+let timeLeft = 180; // 3 minuten
+
+function updateTimer() {
+    const timerDisplay = document.getElementById("timer");
+    if (!timerDisplay) return;
+
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+
+    timerDisplay.textContent = `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    updateTimer();
+
+    const interval = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+
+        if (timeLeft < 0) {
+            clearInterval(interval);
+            window.location.href = "../lose.php";
+        }
+    }, 1000);
+}
+
+window.addEventListener("DOMContentLoaded", startTimer);
+
+
+// =========================
+// RIDDLE LOGICA (ALLE ROOMS)
+// =========================
+
 let correctCount = 0;
 
-// Deze functie opent de modal en toont de vraag
 function openModal(index) {
-  let box = document.querySelector(`.box[data-index='${index}']`);
-  let riddleText = box.dataset.riddle;
-  let correctAnswer = box.dataset.answer;
-
-  document.getElementById('riddle').innerText = riddleText;
-  document.getElementById('modal').dataset.answer = correctAnswer;
-  document.getElementById('answer').value = '';
-
-  document.getElementById('overlay').style.display = 'block';
-  document.getElementById('modal').style.display = 'block';
-}
-
-// Deze functie sluit de modal en de overlay
-function closeModal() {
-  document.getElementById('overlay').style.display = 'none';
-  document.getElementById('modal').style.display = 'none';
-  document.getElementById('feedback').innerText = '';
-}
-
-// Deze functie controleert of het ingevoerde antwoord correct is
-function checkAnswer() {
-  let userAnswer = document.getElementById('answer').value.trim();
-  let correctAnswer = document.getElementById('modal').dataset.answer;
-  let feedback = document.getElementById('feedback');
-
-  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-
-    // Goed antwoord → teller +1
-    correctCount++;
-
-    // Als alle 3 goed zijn → win scherm
-    if (correctCount === 3) {
-      window.location.href = "../win.php";
-      return;
+    // Pak altijd de box op basis van data-index, ongeacht de class (room1-box, room2-box, etc.)
+    const box = document.querySelector(`[data-index='${index}']`);
+    if (!box) {
+        console.error("Geen box gevonden voor index:", index);
+        return;
     }
 
-    // Feedback tonen
-    feedback.innerText = 'Correct! Goed gedaan!';
-    feedback.style.color = 'green';
+    const riddleText = box.dataset.riddle || '';
+    const correctAnswer = box.dataset.answer || '';
 
-    // Modal sluiten na korte delay
-    setTimeout(closeModal, 800);
+    document.getElementById('riddle').innerText = riddleText;
+    document.getElementById('modal').dataset.answer = correctAnswer;
+    document.getElementById('answer').value = '';
+    document.getElementById('feedback').innerText = '';
 
-  } else {
-    // Fout → verlies scherm
-    window.location.href = "../lose.php";
-  }
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
 }
 
+function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('feedback').innerText = '';
+}
 
+function checkAnswer() {
+    const userAnswer = document.getElementById('answer').value.trim();
+    const correctAnswer = document.getElementById('modal').dataset.answer || '';
+    const feedback = document.getElementById('feedback');
+
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+        correctCount++;
+
+        // Pas dit aan als een kamer meer/minder raadsels heeft
+        if (correctCount === 3) {
+            window.location.href = "../win.php";
+            return;
+        }
+
+        feedback.innerText = 'Correct! Goed gedaan!';
+        feedback.style.color = 'green';
+
+        setTimeout(closeModal, 800);
+    } else {
+        window.location.href = "../lose.php";
+    }
+}
