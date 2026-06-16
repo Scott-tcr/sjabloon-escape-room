@@ -16,8 +16,20 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 
-?>
+<form method="POST" action="rate.php">
+    <input type="hidden" name="room" value="game">
 
+    <label>Beoordeling:</label>
+    <select name="rating">
+        <option value="1">★ 1</option>
+        <option value="2">★★ 2</option>
+        <option value="3">★★★ 3</option>
+        <option value="4">★★★★ 4</option>
+        <option value="5">★★★★★ 5</option>
+    </select>
+
+    <button type="submit">Opslaan</button>
+</form>
 <!DOCTYPE html>
 <html lang="nl">
 
