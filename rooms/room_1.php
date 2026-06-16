@@ -1,23 +1,40 @@
 <?php
-require_once('../dbcon.php');
+session_start();
+require "../dbcon.php";
 
+// Check login
+if (!isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$username = $_SESSION['user'];
+
+// Haal user ID op
+$stmt = $db_connection->prepare("SELECT id FROM users WHERE username = :u");
+$stmt->bindParam(":u", $username);
+$stmt->execute();
+$user_id = $stmt->fetchColumn();
+
+// Haal team op
+$team_stmt = $db_connection->prepare("
+    SELECT teams.team_name 
+    FROM team_members 
+    JOIN teams ON team_members.team_id = teams.id
+    WHERE team_members.user_id = :id
+");
+$team_stmt->bindParam(":id", $user_id);
+$team_stmt->execute();
+$team_name = $team_stmt->fetchColumn();
+
+// Haal riddles op
 try {
     $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomid = 1");
     $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Databasefout: " . $e->getMessage());
 }
-
-
-session_start();
-if (!isset($_SESSION['user'])) {
-    header("Location: ../login.php");
-    exit;
-}
 ?>
-
-?>
-
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -26,18 +43,9 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room 1</title>
 
-    <!-- Room 1 dieren thema -->
     <link rel="stylesheet" href="../css/room1.css">
 
-    <style>
-        #timer {
-            font-size: 40px;
-            font-weight: bold;
-            color: #ff6b6b;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
+  
 </head>
 
 <body class="room1">
@@ -47,6 +55,11 @@ if (!isset($_SESSION['user'])) {
     <h1>Escape Room 1</h1>
     <p class="room1-subtitle">Los de dierlijke raadsels op om te ontsnappen...</p>
 
+    <!-- TEAM INFO -->
+    <p class="team-info">
+        Je zit in team: <strong><?= $team_name ?: 'Geen team' ?></strong>
+    </p>
+
     <!-- TIMER -->
     <div id="timer">03:00</div>
 
@@ -54,11 +67,11 @@ if (!isset($_SESSION['user'])) {
     <div class="room1-box-grid">
         <?php foreach ($riddles as $index => $riddle): ?>
             <div class="room1-box"
-                onclick="openModal(<?php echo $index; ?>)"
-                data-index="<?php echo $index; ?>"
-                data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
-                data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>">
-                <h2>Box <?php echo $index + 1; ?></h2>
+                onclick="openModal(<?= $index ?>)"
+                data-index="<?= $index ?>"
+                data-riddle="<?= htmlspecialchars($riddle['riddle']) ?>"
+                data-answer="<?= htmlspecialchars($riddle['answer']) ?>">
+                <h2>Box <?= $index + 1 ?></h2>
                 <p>Klik om het raadsel te openen</p>
             </div>
         <?php endforeach; ?>

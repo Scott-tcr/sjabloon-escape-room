@@ -134,3 +134,19 @@ body.room3 {
     margin-top: 10px;
     font-weight: bold;
 }
+
+
+        #timer {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .team-info {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+    
