@@ -2,6 +2,7 @@
 $server = "localhost"; 
 $username = "root";
 $password = "";  
+$db = "escaperoom1"; //pas dit aan indien de naam van jullie database anders is
 
 try {
   $db_connection = new PDO("mysql:host=$server; dbname=$db", $username, $password);
