@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "escaperoom1");
+$conn = new mysqli("localhost", "root", "", "escaperoom");
 
 if ($conn->connect_error) {
     die("DB error: " . $conn->connect_error);
