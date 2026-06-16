@@ -7,6 +7,15 @@ try {
 } catch (PDOException $e) {
     die("Databasefout: " . $e->getMessage());
 }
+
+
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+}
+?>
+
 ?>
 
 <!DOCTYPE html>

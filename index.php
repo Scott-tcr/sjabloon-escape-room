@@ -1,9 +1,27 @@
 <?php
+
+
+
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: auth.php");
+    exit;
+}
+?>
+
+
  
 ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+
+<div class="top-right-logout">
+    <a href="logout.php" class="logout-btn">Uitloggen</a>
+</div>
+
+
     <meta charset="UTF-8">
     <title>Escape Room - Dieren, Games & Planeten</title>
     <link rel="stylesheet" href="css/style.css">
