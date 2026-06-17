@@ -1,0 +1,69 @@
+/* ===== Global layout ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #121820;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 40px;
+}
+
+/* ===== Title ===== */
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* ===== Table container ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1f27;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow:
+        0 0 12px rgba(0, 255, 157, 0.35),
+        0 0 22px rgba(77, 123, 255, 0.25);
+}
+
+/* ===== Table header ===== */
+th {
+    background: linear-gradient(90deg, #00ff9d, #4d7bff);
+    color: #121820;
+    padding: 12px;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* ===== Table rows ===== */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #2f3a45;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background: #161c24;
+}
+
+tr:hover {
+    background: #1f2630;
+}
+
+/* ===== Action links ===== */
+a {
+    color: #4d7bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #00ff9d;
+    text-shadow:
+        0 0 6px rgba(0, 255, 157, 0.6),
+        0 0 10px rgba(77, 123, 255, 0.5);
+}

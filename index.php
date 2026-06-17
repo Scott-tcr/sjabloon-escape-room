@@ -5,6 +5,8 @@ if (!isset($_SESSION['user'])) {
     header("Location: auth.php");
     exit;
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">

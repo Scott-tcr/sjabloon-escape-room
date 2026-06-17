@@ -148,3 +148,32 @@ body.room2 {
             margin-bottom: 15px;
             color: #fff;
         }
+
+
+                .admin-menu {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.admin-menu h3 {
+    margin: 0 0 10px 0;
+}
+
+.admin-btn {
+    display: inline-block;
+    background: #ff6b6b;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.admin-btn:hover {
+    background: #ff3b3b;
+}
+
+        

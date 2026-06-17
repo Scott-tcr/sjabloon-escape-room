@@ -88,3 +88,10 @@ function checkAnswer() {
         window.location.href = "../lose.php";
     }
 }
+
+let totalSeconds = 180; // 180 sec
+let elapsedSeconds = 0;
+
+setInterval(() => {
+    elapsedSeconds++;
+}, 1000);

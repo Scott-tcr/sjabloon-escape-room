@@ -1,0 +1,86 @@
+/* ===== Global layout ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #121820;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 40px;
+}
+
+/* ===== Title ===== */
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* ===== Form container ===== */
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #1a1f27;
+    padding: 28px;
+    border-radius: 12px;
+
+    /* Groen + blauw glow */
+    box-shadow:
+        0 0 12px rgba(0, 255, 157, 0.35),
+        0 0 22px rgba(77, 123, 255, 0.25);
+}
+
+/* ===== Labels ===== */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #cfcfcf;
+}
+
+/* ===== Inputs & textarea ===== */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #2f3a45;
+    border-radius: 6px;
+    background: #11161d;
+    color: #e6e6e6;
+    font-size: 15px;
+
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #4d7bff;
+    box-shadow:
+        0 0 8px rgba(77, 123, 255, 0.6),
+        0 0 12px rgba(0, 255, 157, 0.4);
+    outline: none;
+}
+
+/* ===== Button ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #00ff9d, #4d7bff);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 12px rgba(0, 255, 157, 0.5),
+        0 0 18px rgba(77, 123, 255, 0.45);
+}
+
+

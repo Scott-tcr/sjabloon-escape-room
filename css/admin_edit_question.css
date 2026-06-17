@@ -1,0 +1,72 @@
+/* Algemene layout */
+body {
+    background: #0a0f1a;
+    font-family: Arial, sans-serif;
+    color: #e6f1ff;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Titel */
+h2 {
+    text-align: center;
+    color: #4da3ff;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Formulier container */
+form {
+    width: 450px;
+    margin: 0 auto;
+    background: #111827;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
+    border: 1px solid #1e3a5f;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #9cc9ff;
+}
+
+/* Input velden */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #1e3a5f;
+    background: #0d1526;
+    color: #e6f1ff;
+    font-size: 15px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Opslaan knop */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: linear-gradient(90deg, #1e90ff, #0066cc);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #4da3ff, #1e90ff);
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.6);
+}
