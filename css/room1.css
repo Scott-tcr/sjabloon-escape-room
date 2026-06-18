@@ -35,7 +35,7 @@ body.room1 {
 }
 
 .room1-container::before {
-    background-image: url("/img/jungle1.webp");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5e/Bat_silhouette.svg");
     width: 220px;
     height: 220px;
     top: -40px;
@@ -183,28 +183,3 @@ body.room1 {
             color: #fff;
         }
     
-        .admin-menu {
-    background: #222;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-.admin-menu h3 {
-    margin: 0 0 10px 0;
-}
-
-.admin-btn {
-    display: inline-block;
-    background: #ff6b6b;
-    padding: 8px 12px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.admin-btn:hover {
-    background: #ff3b3b;
-}

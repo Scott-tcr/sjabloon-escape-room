@@ -28,16 +28,24 @@ $team_stmt->execute();
 $team_name = $team_stmt->fetchColumn();
 
 // Haal riddles op
-$stmt = $db_connection->query("SELECT * FROM riddles WHERE roomid = 1");
-$riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+try {
+    $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomid = 1");
+    $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Databasefout: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room 1</title>
+
     <link rel="stylesheet" href="../css/room1.css">
+
+  
 </head>
 
 <body class="room1">
@@ -46,15 +54,6 @@ $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <h1>Escape Room 1</h1>
     <p class="room1-subtitle">Los de dierlijke raadsels op om te ontsnappen...</p>
-
-    <!-- ADMIN MENU -->
-    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-        <div class="admin-menu">
-            <h3> Admin Menu</h3>
-            <a href="../admin_add_question.php" class="admin-btn">Vraag toevoegen</a>
-            <a href="../admin_list_questions.php" class="admin-btn">Vragen beheren</a>
-        </div>
-    <?php endif; ?>
 
     <!-- TEAM INFO -->
     <p class="team-info">
@@ -78,22 +77,6 @@ $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
     </div>
 
-    <!-- RATING FORM -->
-    <form method="POST" action="rate.php" class="rating-form">
-        <input type="hidden" name="room" value="dieren">
-
-        <label>Beoordeling:</label>
-        <select name="rating">
-            <option value="1">★ 1</option>
-            <option value="2">★★ 2</option>
-            <option value="3">★★★ 3</option>
-            <option value="4">★★★★ 4</option>
-            <option value="5">★★★★★ 5</option>
-        </select>
-
-        <button type="submit">Opslaan</button>
-    </form>
-
 </div>
 
 <!-- OVERLAY -->
@@ -115,5 +98,3 @@ $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
-
-
